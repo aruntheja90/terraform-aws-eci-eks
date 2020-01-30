@@ -56,7 +56,6 @@ variable "workers_group_defaults" {
   default = {
     asg_desired_capacity = 2
     root_volume_size     = "20"
-    key_name             = "tvlk-ecb-dev"
     root_encrypted       = true
   }
 }
