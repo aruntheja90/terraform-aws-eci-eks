@@ -117,3 +117,24 @@ variable "enable_service_link_role" {
   description = "This will need to be true, if current AWS account never create any ELB."
   default     = false
 }
+
+# TODO: once we bump it up to v8.0.0 or later to include irsa, this can be removed
+# https://github.com/terraform-aws-modules/terraform-aws-eks/blob/master/variables.tf#L291
+variable "enable_irsa" {
+  description = "Whether to create OpenID Connect Provider for EKS to enable IRSA"
+  default     = false
+}
+
+# TODO: once we bump it up to v8.0.0 or later to include irsa, this can be removed
+# Cannot take from output as https://github.com/terraform-aws-modules/terraform-aws-eks/blob/v4.0.2/outputs.tf doesn't support yet
+variable "cluster_oidc_issuer_url" {
+  description = "The URL on the EKS cluster OIDC Issuer. Must be set if enable_irsa is true"
+  default     = ""
+}
+
+# TODO: once we bump it up to v8.0.0 or later to include irsa, this can be removed
+# REF: https://github.com/terraform-aws-modules/terraform-aws-eks/blob/master/variables.tf#L297
+variable "eks_oidc_root_ca_thumbprint" {
+  description = "Thumbprint of Root CA for EKS OIDC, Valid until 2037"
+  default     = "9e99a48a9960b14926bb7f3b02e22da2b0ab7280"
+}
