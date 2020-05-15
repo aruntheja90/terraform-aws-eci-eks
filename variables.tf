@@ -3,6 +3,11 @@ variable "environment" {
   type        = "string"
 }
 
+variable "team" {
+  description = "Name of the team."
+  type        = "string"
+}
+
 variable "product_domain" {
   description = "Name of product domain"
   type        = "string"

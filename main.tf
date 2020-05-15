@@ -2,13 +2,6 @@ provider "aws" {
   version = ">= 2.6.0"
 }
 
-locals {
-  common_tags = "${merge(
-    map("Environment", var.environment),
-    map("ProductDomain", var.product_domain),
-    map("ManagedBy", "Terraform"))}"
-}
-
 # https://github.com/terraform-aws-modules/terraform-aws-eks/issues/103
 # Remember to remove this part once we use newer version of EKS module, which already fixed this.
 resource "aws_iam_service_linked_role" "elasticloadbalancing" {

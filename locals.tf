@@ -5,5 +5,6 @@ locals {
     ManagedBy     = "Terraform"
     ProductDomain = "eci"
     Tier          = "public,app"
+    Team          = "${var.team}"
   }
 }
